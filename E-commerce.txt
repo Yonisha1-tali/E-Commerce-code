@@ -18,3 +18,15 @@ public:
     float weight;
     string category;
     int sales;
+Yoni Gibi, [11/12/2024 5:38 PM]
+Product(string n, float p, float r, int s, float d, time_t t, int rev, string b, float w, string c, int sa)
+        : name(n), price(p), rating(r), stock(s), discount(d), timestamp(t), reviews(rev), brand(b), weight(w), category(c), sales(sa) {}
+};
+
+Yoni Gibi, [11/12/2024 5:39 PM]
+// Function to display products
+void displayProducts(const vector<Product>& products) {
+    for (const auto& product : products) {
+        cout << "Name: " << product.name << ", Price: " << product.price
+             << ", Rating: " << product.rating << ", Stock: " << product.stock
+             << ", Discount: " << product.discount << "%, Reviews: " << product.reviews
