@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm> // for std::swap
-#include <ctime>     // for time()
+#include <ctime>  // for time()
 using namespace std;
 class Product 
 {
@@ -22,8 +22,9 @@ Product(string n, float p, float r, int s, float d, time_t t, int rev, string b,
 {}
 };
 // Function to display products
-void displayProducts(const vector<Product>& products) {
-    for (const auto& product : products) 
+void displayProducts(const vector<Product>& products) 
+{
+for (const auto& product : products) 
 {
 cout << "Name: " << product.name << ", Price: " << product.price
 << ", Rating: " << product.rating << ", Stock: " << product.stock
@@ -34,70 +35,63 @@ cout << "Name: " << product.name << ", Price: " << product.price
 }
 // Heapify function for heap sort
 void heapify(vector<Product>& products, int n, int i) {
-    int largest = i; // Initialize largest as root
-    int left = 2 * i + 1; // left = 2*i + 1
-    int right = 2 * i + 2; // right = 2*i + 2
-
-    // If left child is larger than root
-    if (left < n && products[left].discount > products[largest].discount)
-        largest = left;
-
-    // If right child is larger than largest so far
-    if (right < n && products[right].discount > products[largest].discount)
-        largest = right;
+int largest = i; // Initialize largest as root
+int left = 2 * i + 1; // left = 2*i + 1
+int right = 2 * i + 2; // right = 2*i + 2
+// If left child is larger than root
+if (left < n && products[left].discount > products[largest].discount)
+ largest = left;
+// If right child is larger than largest so far
+if (right < n && products[right].discount > products[largest].discount)
+largest = right;
 << ", Brand: " << product.brand << ", Weight: " << product.weight
-             << ", Category: " << product.category << ", Sales: " << product.sales << endl;
+<< ", Category: "
+<< product.category << ", Sales: " << product.sales << endl;
     }
 }
-
 // Heapify function for heap sort
 void heapify(vector<Product>& products, int n, int i) {
-    int largest = i; // Initialize largest as root
-    int left = 2 * i + 1; // left = 2*i + 1
-    int right = 2 * i + 2; // right = 2*i + 2
-
-    // If left child is larger than root
-    if (left < n && products[left].discount > products[largest].discount)
-        largest = left;
-
-    // If right child is larger than largest so far
-    if (right < n && products[right].discount > products[largest].discount)
-        largest = right;
-
-  // If largest is not root
-    if (largest != i) {
-        swap(products[i], products[largest]); // Swap root with largest
-        heapify(products, n, largest); // Recursively heapify the affected sub-tree
+int largest = i; // Initialize largest as root
+int left = 2 * i + 1; // left = 2*i + 1
+int right = 2 * i + 2; // right = 2*i + 2
+ // If left child is larger than root
+if (left < n && products[left].discount > products[largest].discount)
+largest = left;
+ // If right child is larger than largest so far
+if (right < n && products[right].discount > products[largest].discount)
+ largest = right;
+ // If largest is not root
+ if (largest != i) {
+ swap(products[i], products[largest]); // Swap root with largest
+heapify(products, n, largest); // Recursively heapify the affected sub-tree
     }
 }
-
 void heapSortByDiscountPercentage(vector<Product>& products) {
-    int n = products.size();
-    
-    // Build heap (rearrange array)
-    for (int i = n / 2 - 1; i >= 0; i--)
+ int n = products.size();
+ // Build heap (rearrange array)
+ for (int i = n / 2 - 1; i >= 0; i--)
 heapify(products, n, i);
-    
-    // One by one extract an element from heap
-    for (int i = n - 1; i > 0; i--) {
-        swap(products[0], products[i]); // Move current root to end
-        heapify(products, i, 0); // call max heapify on the reduced heap
+// One by one extract an element from heap
+  for (int i = n - 1; i > 0; i--) 
+{
+ swap(products[0], products[i]); // Move current root to end
+heapify(products, i, 0); // call max heapify on the reduced heap
     }
 }
 cout << "nEnter details for product " << i + 1 << ":n";
-        cout << "Name: ";
+cout << "Name: ";
         cin.ignore();
         getline(cin, name);
         cout << "Price: ";
         cin >> price;
         cout << "Rating: ";
-cin >> rating;
+        cin >> rating;
         cout << "Stock Quantity: ";
         cin >> stock;
-        cout << "Discount Percentage: ";
+        cout << "Discount   Percentage: ";
         cin >> discount;
         cout <<
-cin >> rating;
+        cin >> rating;
         cout << "Stock Quantity: ";
         cin >> stock;
         cout <<
@@ -115,8 +109,7 @@ cin >> rating;
         getline(cin, category);
         cout << "Sales Volume: ";
         cin >> sales; // read the sales volume as an integer 
-        products.emplace_back(name, price, rating, stock, discount, time(0), reviews, brand, weight, category, sales);
+products.emplace_back(name, price, rating, stock, discount, time(0), reviews, brand, weight, category, sales);
     }
-    
-    return products; //return the vector of products containing all collected data 
+      return products; //return the vector of products containing all collected data 
 }
