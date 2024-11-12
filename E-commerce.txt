@@ -104,4 +104,22 @@ cin >> rating;
         cout << "Stock Quantity: ";
         cin >> stock;
         cout <<
-
+"Discount Percentage: ";
+        cin >> discount;
+        cout << "Number of Reviews: ";
+        cin >> reviews;
+        cout << "Brand: ";
+        cin.ignore();
+        getline(cin, brand);
+        cout << "Weight: ";
+        cin >> weight;
+        cout << "Category: ";
+        cin.ignore();
+        getline(cin, category);
+        cout << "Sales Volume: ";
+        cin >> sales;
+        products.emplace_back(name, price, rating, stock, discount, time(0), reviews, brand, weight, category, sales);
+    }
+    
+    return products;
+}
