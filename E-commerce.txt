@@ -114,9 +114,9 @@ cin >> rating;
         cin.ignore();
         getline(cin, category);
         cout << "Sales Volume: ";
-        cin >> sales;
+        cin >> sales; // read the sales volume as an integer 
         products.emplace_back(name, price, rating, stock, discount, time(0), reviews, brand, weight, category, sales);
     }
     
-    return products;
+    return products; //return the vector of products containing all collected data 
 }
