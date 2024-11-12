@@ -4,8 +4,8 @@
 #include <algorithm> // for std::swap
 #include <ctime>     // for time()
 using namespace std;
-
-class Product {
+class Product 
+{
 public:
     string name;
     float price;
@@ -18,23 +18,20 @@ public:
     float weight;
     string category;
     int sales;
-
-Product(string n, float p, float r, int s, float d, time_t t, int rev, string b, float w, string c, int sa)
-        : name(n), price(p), rating(r), stock(s), discount(d), timestamp(t), reviews(rev), brand(b), weight(w), category(c), sales(sa) {}
+Product(string n, float p, float r, int s, float d, time_t t, int rev, string b, float w, string c, int sa) : name(n), price(p), rating(r), stock(s), discount(d), timestamp(t), reviews(rev), brand(b), weight(w), category(c), sales(sa) 
+{}
 };
-
 // Function to display products
-
 void displayProducts(const vector<Product>& products) {
-    for (const auto& product : products) {
-        cout << "Name: " << product.name << ", Price: " << product.price
-             << ", Rating: " << product.rating << ", Stock: " << product.stock
-             << ", Discount: " << product.discount << "%, Reviews: " << product.reviews
+    for (const auto& product : products) 
+{
+cout << "Name: " << product.name << ", Price: " << product.price
+<< ", Rating: " << product.rating << ", Stock: " << product.stock
+  << ", Discount: " << product.discount << "%, Reviews: " << product.reviews
 << ", Brand: " << product.brand << ", Weight: " << product.weight
-             << ", Category: " << product.category << ", Sales: " << product.sales << endl;
+ << ", Category: " << product.category << ", Sales: " << product.sales << endl;
     }
 }
-
 // Heapify function for heap sort
 void heapify(vector<Product>& products, int n, int i) {
     int largest = i; // Initialize largest as root
