@@ -96,7 +96,7 @@ cout << "Name: ";
         cin >> stock;
         cout <<
 "Discount Percentage: ";
-        cin >> discount;
+ cin >> discount;
         cout << "Number of Reviews: ";
         cin >> reviews;
         cout << "Brand: ";
