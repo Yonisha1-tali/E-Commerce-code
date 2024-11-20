@@ -74,7 +74,7 @@ vector<Product> getProductsFromUser() {
     vector<Product> products;
     int numProducts;
 
-    cout << "Enter the number of products: ";
+    cout << "Enter the number of products: ";/ Prompt user for product details, indicating the current product number
     cin >> numProducts;
 
     for (int i = 0; i < numProducts; i++) {
